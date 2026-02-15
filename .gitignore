@@ -1,0 +1,7 @@
+venv/
+logs/
+raw_data/
+training/
+hardware/
+__pycache__/
+*.pyc
