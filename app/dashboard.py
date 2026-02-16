@@ -57,11 +57,11 @@ st.markdown("## 📊 Road Health Overview")
 
 k1, k2, k3, k4, k5 = st.columns(5)
 
-k1.metric("🏙 City Health Index", avg_rhi_total)
-k2.metric("🚨 Critical Segments", critical)
-k3.metric("⚠ Moderate Segments", moderate)
-k4.metric("🟢 Healthy Segments", good)
-k5.metric("📉 % Critical Roads", f"{critical_percent}%")
+k1.metric("City Health Index", avg_rhi_total)
+k2.metric("Critical Segments", critical)
+k3.metric("Moderate Segments", moderate)
+k4.metric(" Healthy Segments", good)
+k5.metric("% Critical Roads", f"{critical_percent}%")
 
 st.divider()
 
@@ -183,7 +183,7 @@ st.divider()
 # ---------------------------
 # ROAD RANKING TABLE (NEW)
 # ---------------------------
-st.markdown("## 🏆 Road Ranking")
+st.markdown("##Road Ranking")
 
 road_summary = (
     df.groupby("road_name")
@@ -202,7 +202,7 @@ st.divider()
 # ---------------------------
 # RMS DISTRIBUTION
 # ---------------------------
-st.markdown("## 📊 RMS Distribution")
+st.markdown("## RMS Distribution")
 st.bar_chart(df["rms"])
 
 st.divider()
@@ -210,7 +210,7 @@ st.divider()
 # ---------------------------
 # TOP CRITICAL ROADS
 # ---------------------------
-st.markdown("## 🚨 Top High Priority Roads")
+st.markdown("## Top High Priority Roads")
 
 critical_df = df[df["road_label"] == 2]
 
