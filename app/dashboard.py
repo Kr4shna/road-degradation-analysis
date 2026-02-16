@@ -53,7 +53,7 @@ good = len(df[df["road_label"] == 0])
 avg_rhi_total = round(df["RHI"].mean(), 2)
 critical_percent = round((critical / total_segments) * 100, 1)
 
-st.markdown("## 📊 Road Health Overview")
+st.markdown("Road Health Overview")
 
 k1, k2, k3, k4, k5 = st.columns(5)
 
@@ -85,7 +85,7 @@ elif severity_filter == "Critical":
 # ---------------------------
 # MAP SECTION
 # ---------------------------
-st.markdown("## 🗺️ Live Road Condition Map")
+st.markdown("Live Road Condition Map")
 
 m = folium.Map(
     location=[13.05, 80.23],
@@ -183,7 +183,7 @@ st.divider()
 # ---------------------------
 # ROAD RANKING TABLE (NEW)
 # ---------------------------
-st.markdown("##Road Ranking")
+st.markdown("Road Ranking")
 
 road_summary = (
     df.groupby("road_name")
@@ -202,7 +202,7 @@ st.divider()
 # ---------------------------
 # RMS DISTRIBUTION
 # ---------------------------
-st.markdown("## RMS Distribution")
+st.markdown("RMS Distribution")
 st.bar_chart(df["rms"])
 
 st.divider()
@@ -210,7 +210,7 @@ st.divider()
 # ---------------------------
 # TOP CRITICAL ROADS
 # ---------------------------
-st.markdown("## Top High Priority Roads")
+st.markdown("Top High Priority Roads")
 
 critical_df = df[df["road_label"] == 2]
 
@@ -232,7 +232,7 @@ st.divider()
 # ---------------------------
 # ROAD ANALYSIS
 # ---------------------------
-st.markdown("## 🔍 Road Analysis")
+st.markdown("Road Analysis")
 
 road_list = df["road_name"].unique()
 selected_road = st.selectbox("Select Road", road_list)
@@ -263,7 +263,7 @@ st.divider()
 # ---------------------------
 # DOWNLOAD OPTION
 # ---------------------------
-st.markdown("## ⬇ Export Data")
+st.markdown("⬇ Export Data")
 
 st.download_button(
     label="Download Road Report CSV",
